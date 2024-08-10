@@ -6,7 +6,7 @@ Student: Dunh Lee (921476881)
 For Part 1, circuits for output E and N are complete.
 
 ## Known Issues
-The circuit for output N outputs true when X = 110 and Y = 110. The output should be false
+No Known Issues.
 
 ## References
 * [Build an XOR gate from AND/NOT](https://electronics.stackexchange.com/questions/487529/build-an-xor-gate-from-and-not)
