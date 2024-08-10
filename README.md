@@ -13,7 +13,6 @@ The project fails to function properly in ...
 * [Some other link](https://stackoverflow.com)
 
 ## Generative AI Use
-I have not used generative ai.
 
 ### Prompt 1
 How do you create an XOR from only and/or/not gates?
@@ -68,12 +67,3 @@ This way, you have constructed an XOR gate using only AND, OR, and NOT gates.
 ### Changes 1
 I needed XNOR, so changed it to:\
 &not;\(\(A &and; &not; B\) &or; \(&not; A &and; B\)\)
-
-### Prompt 2
-My other prompt...
-
-### Response 2
-The other response...
-
-### Changes 2
-The other changes made...
