@@ -4,9 +4,10 @@ Student: Dunh Lee (921476881)
 
 ## Project Status
 For Part 1, circuits for output E and N are complete.
+For Part 2, the circuit is mostly complete.
 
 ## Known Issues
-No Known Issues.
+For part 1, output G2 is not correct for all inputs.
 
 ## References
 * [Build an XOR gate from AND/NOT](https://electronics.stackexchange.com/questions/487529/build-an-xor-gate-from-and-not)
