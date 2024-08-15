@@ -16,12 +16,14 @@ In this part, we convert the binary input into the gray code that corresponds wi
 <br/>
 To find a relation, we'll use a K-map to map every bit in the input to a bit in the output. Meaning, we will have 4 K-maps for each bit in the output to find the expressions that can convert 4-bit binary to gray code.
 <br/>
+<br/>
 The K-maps and boolean expressions are shown below:
 
 <img src="kmaps/2.png" alt="G3 and G2 K-map" width="400"/>
 <img src="kmaps/1.png" alt="G2 and G1 K-map" width="400"/>
 <img src="kmaps/0.png" alt="Boolean Expressions" width="400"/>
 
+Using these boolean expressions, I'm able to build a circuit that converts 4-bit binary into gray code.
 ## Seven-Segment Display
 
   For the seven-segment display, the truth tables for digits 0-4 and 5-9 are the same and only differ by the Z input. So, my process was to make a truth table for digits 0-4 for only the vertical line inputs.  Once the Boolean equations for the vertical line inputs are obtained, a number from 0-4 will be displayed if Z is off or a number from 5-9 will be displayed if Z is on.
