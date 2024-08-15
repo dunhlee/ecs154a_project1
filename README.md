@@ -46,7 +46,9 @@ Here, we make a NOR gate for all the vertical lines because 0 or 5 is displayed 
 <br/>
 To determine if 0 or 5 is displayed, I used two separate AND gates to check if Z was on or off.
 <br/>
+<br/>
 0 is displayed when Z is off and ZERO_FIVE is true, so we want to AND &not; Z with the ZERO_FIVE equation. 
+<br/>
 <br/>
 The equation for 0 is:
 <br/>
