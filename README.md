@@ -51,6 +51,7 @@ To determine if 0 or 5 is displayed, I used two separate AND gates to check if Z
 The equation for 0 is:
 <br/>
 ZERO = ZERO_FIVE &and; &not; Z
+<br/>
 5 is displayed when Z is on, so we AND Z with ZERO_FIVE. 
 <br/>
 The equation for 5 is: FIVE = ZERO_FIVE &and;  Z
