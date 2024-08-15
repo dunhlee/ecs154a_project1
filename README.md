@@ -11,6 +11,15 @@ Student: Dunh Adam Lee (921476881)
 
 All circuits are complete.
 
+## Compare
+This circuit accepts two 3-bit digits, X and Y, as inputs and outputs if X = Y and X < Y.
+
+To make an equality circuit for the inputs, we can check whether each of their respective bits are equal with an XNOR gate, then we AND the result of all the XNOR gates to see if all of the bits are equal. 
+
+The boolean expression would look like this:
+
+(X2 XNOR Y2) AND (X1 XNOR Y1) AND (X0 XNOR Y0)
+
 ## Gray Code
 In this part, we convert the binary input into the gray code that corresponds with the last digit of our SSID. Mine is 1 so I'll focus on column 1. We have four inputs B3, B2, B1, and B0 and we have four outputs G3, G2, G1, G0. We can find a relation between the inputs and outputs, but we don't know exactly what that relation is. 
 <br/>
@@ -39,6 +48,7 @@ It made sense to determine the digits in pairs since the respective digits from 
 * For each digit pair, AND the Boolean expression for vertical lines with &not;Z if it is a digit from 0-4, or Z if the digit is 5-9, to determine which digit from the pair to display based on if Z is off or on.
 *  Determine which output segments are required to display each digit by looking at what's given.
 * Connect the output of each digit's circuit to the output segments required for the digit to be displayed
+
 #### Walkthrough process for digits 0 and 5
 Digits 0 and 5 have no vertical lines.
 When 0 is displayed, segments [A, B, C, D, E, F] are on.
@@ -56,7 +66,6 @@ To determine if 0 or 5 is displayed, I used two separate AND gates to check if Z
 <br/>
 <br/>
 The equation for 0 is:
-<br/>
 ZERO = ZERO_FIVE &and; &not; Z
 <br/>
 <br/>
