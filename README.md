@@ -15,6 +15,8 @@ All circuits are complete.
 In this part, we convert the binary input into the gray code that corresponds with the last digit of our SSID. Mine is 1 so I'll focus on column 1. We have four inputs B3, B2, B1, and B0 and we have four outputs G3, G2, G1, G0. We can find a relation between the inputs and outputs, but we don't know exactly what that relation is. 
 <br/>
 To find a relation, we'll use a K-map to map every bit in the input to a bit in the output. Meaning, we will have 4 K-maps for each bit in the output to find the expressions that can convert 4-bit binary to gray code.
+<br/>
+The K-maps and boolean expressions are shown below:
 
 <img src="kmaps/2.png" alt="G3 and G2 K-map" width="400"/>
 <img src="kmaps/1.png" alt="G2 and G1 K-map" width="400"/>
