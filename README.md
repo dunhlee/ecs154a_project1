@@ -16,9 +16,9 @@ In this part, we convert the binary input into the gray code that corresponds wi
 <br/>
 To find a relation, we'll use a K-map to map every bit in the input to a bit in the output. Meaning, we will have 4 K-maps for each bit in the output to find the expressions that can convert 4-bit binary to gray code.
 
-![G3 and G2 K-map](kmaps/2.png)
-![G1 and G0 K-map](kmaps/1.png)
-![Boolean expressions simplified](kmaps/0.png)
+<img src="kmaps/2.png" alt="G3 and G2 K-map" width="400"/>
+<img src="kmaps/1.png" alt="G2 and G1 K-map" width="400"/>
+<img src="kmaps/0.png" alt="Boolean Expressions" width="400"/>
 
 ## Seven-Segment Display
 
