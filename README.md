@@ -23,7 +23,7 @@ The K-maps and boolean expressions are shown below:
 <img src="kmaps/1.png" alt="G2 and G1 K-map" width="400"/>
 <img src="kmaps/0.png" alt="Boolean Expressions" width="400"/>
 
-Using these boolean expressions, I'm able to build a circuit that converts 4-bit binary into gray code.
+Using these boolean expressions, I'm able to build circuits that convert 4-bit binary into gray code.
 ## Seven-Segment Display
 
   For the seven-segment display, the truth tables for digits 0-4 and 5-9 are the same and only differ by the Z input. So, my process was to make a truth table for digits 0-4 for only the vertical line inputs.  Once the Boolean equations for the vertical line inputs are obtained, a number from 0-4 will be displayed if Z is off or a number from 5-9 will be displayed if Z is on.
@@ -43,9 +43,10 @@ It made sense to determine the digits in pairs since the respective digits from 
 Digits 0 and 5 have no vertical lines.
 When 0 is displayed, segments [A, B, C, D, E, F] are on.
 When 5 is displayed, segments [A, C, D, F, G] are on.
-The vertical line inputs for 0 and 5 are expressed as this Boolean equation:  
 
+The vertical line inputs for 0 and 5 are expressed as this Boolean equation:  
 ZERO_FIVE = \(&not; V &and; &not; W &and; &not; X &and; &not; Y)
+
 Here, we make a NOR gate for all the vertical lines because 0 or 5 is displayed when all the vertical lines are off.
 <br/>
 <br/>
