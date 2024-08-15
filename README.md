@@ -52,8 +52,12 @@ The equation for 0 is:
 <br/>
 ZERO = ZERO_FIVE &and; &not; Z
 <br/>
+<br/>
 5 is displayed when Z is on, so we AND Z with ZERO_FIVE. 
 <br/>
-The equation for 5 is: FIVE = ZERO_FIVE &and;  Z
+The equation for 5 is: 
+<br/>
+FIVE = ZERO_FIVE &and;  Z
+<br/>
 <br/>
 The following digit pairs: (1,6), (2,7), (3,8), (4,9) follow the same process as above. 
