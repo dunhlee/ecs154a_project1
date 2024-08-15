@@ -1,70 +1,54 @@
+
 # Project 1 README
 
-Student: Dunh Lee (921476881)
+  
+
+Student: Dunh Adam Lee (921476881)
+
+  
 
 ## Project Status
-For Part 1, circuits for output E and N are complete.
-For Part 2, the circuit is mostly complete.
 
-## Known Issues
-For part 1, output G2 is not correct for all inputs.
+All circuits are complete.
 
-## References
-* [Build an XOR gate from AND/NOT](https://electronics.stackexchange.com/questions/487529/build-an-xor-gate-from-and-not)
-* [Some other link](https://stackoverflow.com)
+## Gray Code
+In this part, we convert the binary input into the gray code that corresponds with the last digit of our SSID. Mine is 1 so I'll focus on column 1. We have four inputs B3, B2, B1, and B0 and we have four outputs G3, G2, G1, G0. We can find a relation between the inputs and outputs, but we don't know exactly what that relation is. 
+<br/>
+To find a relation, we'll use a K-map to map every bit in the input to a bit in the output. Meaning, we will have 4 K-maps for each bit in the output to find the expressions that can convert 4-bit binary to gray code.
 
-## Generative AI Use
+[G3 and G2 K-map](kmaps/2.png)
+[G1 and G0 K-map](kmaps/1.png)
+[Boolean expressions simplified](kmaps/0.png)
 
-### Prompt 1
-How do you create an XOR from only and/or/not gates?
+## Seven-Segment Display
 
-### Response 1
-To create an XOR (exclusive OR) gate using only AND, OR, and NOT gates, you can follow these steps. The XOR gate outputs true only when the inputs are different.
+  For the seven-segment display, the truth tables for digits 0-4 and 5-9 are the same and only differ by the Z input. So, my process was to make a truth table for digits 0-4 for only the vertical line inputs.  Once the Boolean equations for the vertical line inputs are obtained, a number from 0-4 will be displayed if Z is off or a number from 5-9 will be displayed if Z is on.
+<br/>
+There is an OR gate connected to each output A-G to be able to handle multiple possible inputs.
+<br/>
+### Determining display
+It made sense to determine the digits in pairs since the respective digits from 0-4 and 5-9 share the same amount of vertical lines. The process:
+* Use the amount of vertical lines for digits 0-4 to make a truth table for each of them. 
 
-The truth table for XOR is:
+* Use the truth table to obtain a Boolean expression for the vertical line inputs. Digit pairs (0,5), (1,6), .., and so on, share the same vertical line Boolean expressions. Simplify the expression if possible.
+* If the same expression appears multiple times, then reuse its circuit.
+* For each digit pair, AND the Boolean expression for vertical lines with &not;Z if it is a digit from 0-4, or Z if the digit is 5-9, to determine which digit from the pair to display based on if Z is off or on.
+*  Determine which output segments are required to display each digit by looking at what's given.
+* Connect the output of each digit's circuit to the output segments required for the digit to be displayed
+#### Walkthrough process for digits 0 and 5
+Digits 0 and 5 have no vertical lines.
+When 0 is displayed, segments [A, B, C, D, E, F] are on.
+When 5 is displayed, segments [A, C, D, F, G] are on.
+The vertical line inputs for 0 and 5 are expressed as this Boolean equation:  
 
-| A | B | A XOR B |
-|---|---|---------|
-| 0 | 0 |    0    |
-| 0 | 1 |    1    |
-| 1 | 0 |    1    |
-| 1 | 1 |    0    |
-
-The Boolean expression for XOR can be derived as:\
-A &oplus; B = (A &and; &not; B) &or; (&not; A &and; B)
-
-This can be broken down into the following steps:
-
-1. Create \(&not; A\) and \(&not; B\) using NOT gates.
-1. Create \(A &and; &not; B\) and \(&not; A &and; B\) using AND gates.
-1. Combine the results of the two AND gates using an OR gate.
-
-Here is the step-by-step logic construction:
-
-1. **NOT gates** to get \(&not; A\) and \(&not; B\):\
-   NOT(A) &rarr; &not; A\
-   NOT(B) &rarr; &not; B
-
-1. **AND gates** to get \(A &and; &not; B\) and \(&not; A &and; B\):\
-   A &and; &not; B &rarr; AND(A, &not; B)\
-   &not; A &and; B &rarr; AND(&not; A, B)
-
-1. **OR gate** to get the final result:\
-   (A &and; &not; B) &or; (&not; A &and; B) &rarr; OR(AND(A, &not; B), AND(&not; A, B))
-
-Putting it all together in a circuit diagram:
-
-1. Input \(A\) goes to a NOT gate to produce \(&not; A\).
-1. Input \(B\) goes to a NOT gate to produce \(&not; B\).
-1. Input \(A\) and the output of the NOT gate for \(B\) go to an AND gate to produce \(A &and; &not; B\).
-1. Input \(B\) and the output of the NOT gate for \(A\) go to an AND gate to produce \(&not; A &and; B\).
-1. The outputs of the two AND gates go to an OR gate to produce the final output \(A &oplus; B\).
-
-In terms of Boolean logic:\
-XOR(A, B) = \(A &and; &not; B\) &or; \(&not; A &and; B\) 
-
-This way, you have constructed an XOR gate using only AND, OR, and NOT gates.
-
-### Changes 1
-I needed XNOR, so changed it to:\
-&not;\(\(A &and; &not; B\) &or; \(&not; A &and; B\)\)
+ZERO_FIVE = \(&not; V &and; &not; W &and; &not; X &and; &not; Y)
+Here, we make a NOR gate for all the vertical lines because 0 or 5 is displayed when all the vertical lines are off.
+<br/>
+To determine if 0 or 5 is displayed, I used two separate AND gates to check if Z was on or off.
+<br/>
+0 is displayed when Z is off and ZERO_FIVE is true, so we want to AND &not; Z with the ZERO_FIVE equation. The equation for 0 is:
+ZERO = ZERO_FIVE &and; &not; Z
+5 is displayed when Z is on, so we AND Z with ZERO_FIVE. The equation for 5 is:
+FIVE = ZERO_FIVE &and;  Z
+<br/>
+The following digit pairs: (1,6), (2,7), (3,8), (4,9) follow the same process as above. 
