@@ -29,6 +29,7 @@ To determine if X < Y, we can check the MSBs, X2 and Y2. if X2 is 0 and Y2 is 1,
 Since checking the next bits rely on the MSB of X and Y to be equal, there needs to be an XNOR gate for X1 and Y1 ANDed with the result of X1 and Y1. If X1 and Y1 are equal, we extend this logic to the LSB, which relies on both X2 and Y2 to be equal, and X1 and Y1 to be equal in order to determine if X < Y. 
 
 Therefore, our equation for X < Y is expressed as:
+
 (&not; X2 AND Y2) OR ((X2 XNOR Y2) AND (&not; X1 AND Y1)) OR ((X2 XNOR Y2) AND (X1 XNOR Y1) AND (&not; X0 AND Y0))
 
 ## Gray Code
